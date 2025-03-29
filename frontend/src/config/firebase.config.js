@@ -5,4 +5,5 @@ export const firebaseConfig = {
   storageBucket: process.env.REACT_APP_FirebaseStorageBucket,
   messagingSenderId: process.env.REACT_APP_FirebaseMessagingSenderId,
   appId: process.env.REACT_APP_FirebaseAppId,
+  measurementID: process.env.REACT_APP_MeasurementId,
 };

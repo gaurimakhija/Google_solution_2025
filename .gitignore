@@ -7,6 +7,8 @@ frontend/**/*.back.*
 frontend/node_modules
 frontend/bower_components
 
+frontend/.env
+
 frontend/*.sublime*
 
 frontend/psd
