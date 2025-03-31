@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "hosting",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,15 +18,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "serve": "serve -s build",
-    "build-and-serve": "npm run build && npm run serve",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "pull": "git pull && npm i && npm start"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +43,15 @@
   },
   "homepage": ".",
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.2.3",
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "vite": "^6.2.0"
   }
 }
