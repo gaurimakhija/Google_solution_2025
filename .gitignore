@@ -1,20 +1,43 @@
-.idx
+# Python (Backend)
+backend/__pycache__/
+backend/*.pyc
+backend/*.sqlite3
+backend/migrations/
 
+# Node.js (Frontend)
+hosting/node_modules/
+hosting/package-lock.json
 
-frontend/.DS_*
-frontend/*.log
-frontend/logs
-frontend/**/*.backup.*
-frontend/**/*.back.*
+# OS generated files
+.DS_Store
+hosting/.DS_Store
 
-frontend/node_modules
-frontend/bower_components
+# Logs and temp files
+hosting/*.log
+hosting/logs/
+hosting/**/*.backup.*
+hosting/**/*.back.*
 
-frontend/.env
+# Environment variables
+hosting/.env
 
-frontend/*.sublime*
+# Editor specific files
+hosting/*.sublime*
 
-frontend/psd
-frontend/thumb
-frontend/sketch
+# Design files (optional)
+hosting/psd/
+hosting/thumb/
+hosting/sketch/
 
+# Build files
+hosting/build/
+hosting/dist/
+
+# Other
+hosting/coverage/
+hosting/.nyc_output/
+hosting/.parcel-cache/
+
+#IDE configs
+.vscode/
+.idx/
