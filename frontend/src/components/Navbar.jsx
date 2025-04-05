@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import DarkModeToggle from "./DarkModeToggle";
 
-
-
 const Navbar = () => {
-
-
     const [menuOpen, setMenuOpen] = useState(false);
     const [darkMode, setDarkMode] = useState(() => {
         return localStorage.getItem("theme") === "dark";
     });
-
-    const location = useLocation();
-    const navigate = useNavigate();
 
     useEffect(() => {
         const html = document.documentElement;
@@ -30,16 +22,7 @@ const Navbar = () => {
     return (
         <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md shadow-sm transition-colors">
             <div className="w-full px-6 py-4 flex justify-between items-center">
-                <h1
-                    onClick={() => {
-                        if (location.pathname === "/") {
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                        } else {
-                            navigate("/");
-                        }
-                    }}
-                    className="text-2xl font-bold text-orange-600 dark:text-orange-400 cursor-pointer transition-colors"
-                >
+                <h1 className="text-2xl font-bold text-orange-600 dark:text-orange-400 cursor-pointer transition-colors">
                     🎵 EduMuse
                 </h1>
 

@@ -1,22 +1,18 @@
-import { useState } from 'react';
-import './App.css';
-import useLenis from './hooks/useLenis';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Gallery from './components/Gallery';
-import LandingCanvas from './components/LandingCanvas';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage.jsx';
+import './index.css';
 
-function App() {
-  const [count, setCount] = useState(0);
-  useLenis();
-
-  return (
-    <>
-      <Hero/>
-      <Navbar/>
-      <Gallery/>
-    </>
-  );
-}
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        {/* Add more routes here */}
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>,
+);
 
 export default App;
