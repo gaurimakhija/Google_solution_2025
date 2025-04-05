@@ -5,38 +5,38 @@ backend/*.sqlite3
 backend/migrations/
 
 # Node.js (Frontend)
-hosting/node_modules/
-hosting/package-lock.json
+frontend/node_modules/
+frontend/package-lock.json
 
 # OS generated files
 .DS_Store
-hosting/.DS_Store
+frontend/.DS_Store
 
 # Logs and temp files
-hosting/*.log
-hosting/logs/
-hosting/**/*.backup.*
-hosting/**/*.back.*
+frontend/*.log
+frontend/logs/
+frontend/**/*.backup.*
+frontend/**/*.back.*
 
 # Environment variables
-hosting/.env
+frontend/.env
 
 # Editor specific files
-hosting/*.sublime*
+frontend/*.sublime*
 
 # Design files (optional)
-hosting/psd/
-hosting/thumb/
-hosting/sketch/
+frontend/psd/
+frontend/thumb/
+frontend/sketch/
 
 # Build files
-hosting/build/
-hosting/dist/
+frontend/build/
+frontend/dist/
 
 # Other
-hosting/coverage/
-hosting/.nyc_output/
-hosting/.parcel-cache/
+frontend/coverage/
+frontend/.nyc_output/
+frontend/.parcel-cache/
 
 #IDE configs
 .vscode/
