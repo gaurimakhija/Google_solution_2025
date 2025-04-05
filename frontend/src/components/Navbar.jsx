@@ -52,9 +52,10 @@ const Navbar = () => {
 
                 <div className="flex items-center gap-4">
                     <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+
                     <button
                         onClick={() => (window.location.href = "/login")}
-                        className="hidden md:block bg-orange-500 text-white px-4 py-2 rounded-xl hover:bg-orange-600 transition"
+                        className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-xl transition duration-300 shadow-md hover:shadow-[0_0_30px_10px_#fb923c]"
                     >
                         Try Now
                     </button>
