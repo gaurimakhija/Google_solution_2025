@@ -6,16 +6,16 @@ import DarkModeToggle from "./DarkModeToggle";
 
 
 const Navbar = () => {
-    
-    
+
+
     const [menuOpen, setMenuOpen] = useState(false);
     const [darkMode, setDarkMode] = useState(() => {
         return localStorage.getItem("theme") === "dark";
     });
-    
+
     const location = useLocation();
     const navigate = useNavigate();
-    
+
     useEffect(() => {
         const html = document.documentElement;
         if (darkMode) {
@@ -47,7 +47,6 @@ const Navbar = () => {
                 <ul className="hidden md:flex gap-6 text-gray-700 dark:text-gray-200 font-medium">
                     <li className="hover:text-orange-500 cursor-pointer transition">Home</li>
                     <li className="hover:text-orange-500 cursor-pointer transition">Features</li>
-                    <li className="hover:text-orange-500 cursor-pointer transition">Gallery</li>
                     <li className="hover:text-orange-500 cursor-pointer transition">Contact</li>
                 </ul>
 
@@ -75,7 +74,6 @@ const Navbar = () => {
                     <ul className="flex flex-col gap-4 text-gray-800 dark:text-gray-100 font-medium">
                         <li className="hover:text-orange-500 transition">Home</li>
                         <li className="hover:text-orange-500 transition">Features</li>
-                        <li className="hover:text-orange-500 transition">Gallery</li>
                         <li className="hover:text-orange-500 transition">Contact</li>
                         <li>
                             <button
