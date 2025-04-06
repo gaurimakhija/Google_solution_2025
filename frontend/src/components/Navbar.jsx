@@ -36,7 +36,7 @@ const Navbar = () => {
                     onClick={handleEduMuseClick}
                     className="text-2xl font-bold text-orange-600 dark:text-orange-400 cursor-pointer transition-colors"
                 >
-                    🎵 EduMuse
+                    🎵 SwarVed
                 </h1>
 
                 {/* Desktop Menu */}
