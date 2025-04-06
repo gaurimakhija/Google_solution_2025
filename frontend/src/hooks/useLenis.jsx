@@ -1,18 +1,22 @@
 import { useEffect } from 'react';
-import Lenis from 'lenis';
+import Lenis from 'lenis'; // Make sure this matches your installed package
 
 const useLenis = () => {
     useEffect(() => {
         const lenis = new Lenis();
+        let animationFrame;
 
         const raf = (time) => {
             lenis.raf(time);
-            requestAnimationFrame(raf);
+            animationFrame = requestAnimationFrame(raf);
         };
 
-        requestAnimationFrame(raf);
+        animationFrame = requestAnimationFrame(raf);
 
-        return () => lenis.destroy();
+        return () => {
+            cancelAnimationFrame(animationFrame);
+            lenis.destroy();
+        };
     }, []);
 };
 

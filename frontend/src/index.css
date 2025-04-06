@@ -40,6 +40,7 @@ body {
 /* Optional: smooth scroll */
 html {
   scroll-behavior: smooth;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 /* Optional: Button base styles */

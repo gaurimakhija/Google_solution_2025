@@ -1,28 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from "lucide-react";
+import Lenis from "lenis";
 import DarkModeToggle from "./DarkModeToggle";
+import useDarkMode from "../hooks/useDarkMode";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [darkMode, setDarkMode] = useState(() => {
-        return localStorage.getItem("theme") === "dark";
-    });
+    const [darkMode, setDarkMode] = useDarkMode();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const lenisRef = useRef(null);
 
     useEffect(() => {
-        const html = document.documentElement;
-        if (darkMode) {
-            html.classList.add("dark");
-            localStorage.setItem("theme", "dark");
-        } else {
-            html.classList.remove("dark");
-            localStorage.setItem("theme", "light");
+        lenisRef.current = new Lenis();
+        function raf(time) {
+            lenisRef.current?.raf(time);
+            requestAnimationFrame(raf);
         }
-    }, [darkMode]);
+        requestAnimationFrame(raf);
+    }, []);
+
+    const handleEduMuseClick = () => {
+        if (location.pathname === "/") {
+            lenisRef.current?.scrollTo(0);
+        } else {
+            navigate("/");
+        }
+    };
 
     return (
         <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md shadow-sm transition-colors">
             <div className="w-full px-6 py-4 flex justify-between items-center">
-                <h1 className="text-2xl font-bold text-orange-600 dark:text-orange-400 cursor-pointer transition-colors">
+                <h1
+                    onClick={handleEduMuseClick}
+                    className="text-2xl font-bold text-orange-600 dark:text-orange-400 cursor-pointer transition-colors"
+                >
                     🎵 EduMuse
                 </h1>
 
@@ -37,7 +50,7 @@ const Navbar = () => {
                     <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
 
                     <button
-                        onClick={() => (window.location.href = "/login")}
+                        onClick={() => navigate("/login")}
                         className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-xl transition duration-300 shadow-md hover:shadow-[0_0_30px_10px_#fb923c]"
                     >
                         Try Now
@@ -61,7 +74,7 @@ const Navbar = () => {
                         <li className="hover:text-orange-500 transition">Contact</li>
                         <li>
                             <button
-                                onClick={() => (window.location.href = "/login")}
+                                onClick={() => navigate("/login")}
                                 className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-xl transition duration-300 shadow-md hover:shadow-[0_0_30px_10px_#fb923c]"
                             >
                                 Try Now
