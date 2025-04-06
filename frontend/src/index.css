@@ -1,8 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 
+
+/* Global styles */
 body,
 html,
 #root {
@@ -13,13 +13,28 @@ html,
 }
 
 body {
-  @apply bg-white text-gray-900 dark:bg-zinc-900 dark:text-white transition-colors duration-300;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   display: flex;
   place-items: center;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+/* Dark/light mode controlled via classes */
+:root {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  color: rgb(17 24 39);
+  /* text-gray-900 */
+}
+
+.dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+  /* dark:bg-zinc-900 */
+  color: white;
 }
 
 /* Optional: smooth scroll */
@@ -29,5 +44,8 @@ html {
 
 /* Optional: Button base styles */
 button {
-  @apply rounded-lg px-4 py-2 font-medium transition;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
