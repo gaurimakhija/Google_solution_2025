@@ -6,7 +6,6 @@ export const assets = {
   logoIcon: SVG.logoIcon,
   facebookIcon: SVG.facebookIcon,
   instagramIcon: SVG.instagramIcon,
-  twitterIcon: SVG.twitterIcon,
   starIcon: SVG.starIcon,
   ratingStar: SVG.ratingStar,
   sampleImg1: PNG.sampleImg1,
