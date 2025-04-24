@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Lenis from "lenis";
 
-const images = ["/art1.jpg", "/art2.jpg", "/art3.jpg", "/art4.jpg"];
+const images = ["Artwork1.jpg", "Artwork2.jpg", "Artwork3.jpg" , "Artwork4.jpg",];
 
 const Gallery = () => {
     const scrollRef = useRef(null);
